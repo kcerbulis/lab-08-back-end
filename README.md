@@ -44,31 +44,21 @@ Based on the weather, a person can also what activities they want to do such as 
 
   
 Corrections  
-Estimate of time needed to complete: _____  
 Start time: 9:45am  
-Finish time: _____  
-Actual time needed to complete: _____  
+Finish time: 11:15am    
+Actual time needed to complete: 1hr 45min     
   
 Feature 1: Data Formatting  
-Estimate of time needed to complete: _____  
-Start time: _____  
-Finish time: _____  
-Actual time needed to complete: _____  
+Start time: 10:30am    
+Finish time: 11:50am    
+Actual time needed to complete: 20min    
   
-Feature 2: Locations  
-Estimate of time needed to complete: _____  
-Start time: _____  
-Finish time: _____  
-Actual time needed to complete: _____  
+Feature 2: Locations API   
+Start time: 11:50am    
+Finish time: 12:30pm    
+Actual time needed to complete: 40min    
   
-Feature 3: Weather  
-Estimate of time needed to complete: _____  
-Start time: _____  
-Finish time: _____  
-Actual time needed to complete: _____  
-  
-Feature 4: Meetups  
-Estimate of time needed to complete: _____  
-Start time: _____  
-Finish time: _____  
-Actual time needed to complete: _____  
+Feature 3: Weather API  
+Start time: 12:30pm    
+Finish time: 1:10pm    
+Actual time needed to complete: 40min    

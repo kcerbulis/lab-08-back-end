@@ -48,24 +48,25 @@ function searchLatLng(request, response) {
   // take the data from the front end, as the searched for location ('berlin')
   const query = request.query.data;
   const geocodeData = `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${process.env.GEOCODE_API_KEY}`;
-  console.log('in search');
 
-  superagent.get(geocodeData).then(result => {
-    console.log(result);
-    const first = result.body.results[0];
+  superagent.get(geocodeData).then(locationResult => {
+    const first = locationResult.body.results[0];
     const responseObject = new Location(query, first);
-    console.log(responseObject);
     response.send(responseObject);
   })
 
 }
 
 function searchWeather(request, response) {
-  const weatherData = require('./data/darksky.json');
-  const weeklyWeatherArray = weatherData.daily.data.map(dayObj => new DailyWeather(dayObj.summary, dayObj.time));
+  const weatherQuery = request.query.data;
+  const weatherData = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${weatherQuery.latitude},${weatherQuery.longitude}`;
 
-  response.send(weeklyWeatherArray);
+  superagent.get(weatherData).then(weatherResult => {
+    const weeklyWeatherArray = weatherResult.body.daily.data.map(dayObj => new DailyWeather(dayObj.summary, dayObj.time));
+    response.send(weeklyWeatherArray);
+  })
 }
+
 
 //==========================================
 // Constructors

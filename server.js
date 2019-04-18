@@ -45,6 +45,7 @@ function searchLatLng(request, response) {
   const query = request.query.data;
   const geocodeData = `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${process.env.GEOCODE_API_KEY}`;
 
+  // Uses the API queary and targets the needed data
   superagent.get(geocodeData).then(locationResult => {
     const first = locationResult.body.results[0];
     const responseObject = new Location(query, first);

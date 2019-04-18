@@ -18,8 +18,9 @@ const superagent = require('superagent');
 //==========================================
 // Server Definition
 //==========================================
-
+// Express is a web application framework, it helps manage API's routs requests and views
 const app = express();
+// Cors enables truly open access across domain-boundries
 app.use(cors());
 
 //==========================================

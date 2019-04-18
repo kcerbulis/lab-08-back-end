@@ -63,3 +63,13 @@ Feature 3: Weather API
 Start time: 12:30pm    
 Finish time: 1:10pm    
 Actual time needed to complete: 40min    
+
+Feature 4: Database setup
+Start time: 9:30am    
+Finish time: 10:30am   
+Actual time needed to complete: 60 min    
+
+Feature 5: Server setup
+Start time: 10:30am    
+Finish time:    
+Actual time needed to complete: 

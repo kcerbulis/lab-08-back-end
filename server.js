@@ -26,10 +26,6 @@ app.use(cors());
 // Server
 //==========================================
 
-//the route
-//request = data from query. example, from a front end query
-//can test in localhost:3000/location to verify
-
 // Switched app.get from an anonymous function to a named callback.
 app.get('/location', searchLatLng);
 

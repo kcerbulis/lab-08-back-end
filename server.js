@@ -18,17 +18,14 @@ const superagent = require('superagent');
 //==========================================
 // Server Definition
 //==========================================
-
+// Express is a web application framework, it helps manage API's routs requests and views
 const app = express();
+// Cors enables truly open access across domain-boundries
 app.use(cors());
 
 //==========================================
 // Server
 //==========================================
-
-//the route
-//request = data from query. example, from a front end query
-//can test in localhost:3000/location to verify
 
 // Switched app.get from an anonymous function to a named callback.
 app.get('/location', searchLatLng);
@@ -49,6 +46,7 @@ function searchLatLng(request, response) {
   const query = request.query.data;
   const geocodeData = `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${process.env.GEOCODE_API_KEY}`;
 
+  // Uses the API queary and targets the needed data
   superagent.get(geocodeData).then(locationResult => {
     const first = locationResult.body.results[0];
     const responseObject = new Location(query, first);

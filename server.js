@@ -53,11 +53,13 @@ app.use('*', (request, response) => {
 function searchLatLng(request, response) {
   // take the data from the front end, as the searched for location ('berlin')
   const query = request.query.data;
-  const geocodeData = `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${process.env.GEOCODE_API_KEY}`;
+  console.log('searchLatLng query: ', query);
+  const geocodeData = `https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${process.env.GOOGLE_API_KEY}`;
 
   // Uses the API queary and targets the needed data
   superagent.get(geocodeData).then(locationResult => {
     const first = locationResult.body.results[0];
+    console.log('searchLatLng first: ', first);
     const responseObject = new Location(query, first);
     response.send(responseObject);
   })

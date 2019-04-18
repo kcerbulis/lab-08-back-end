@@ -14,6 +14,15 @@ const PORT = process.env.PORT || 3000;
 const express = require('express');
 const cors = require('cors');
 const superagent = require('superagent');
+const pg = require('pg');
+
+//==========================================
+// Postgres client setup
+//==========================================
+
+const client = new pg.Client(process.env.DATABASE_URL);
+client.connect();
+client.on('error', error => console.error(error));
 
 //==========================================
 // Server Definition
